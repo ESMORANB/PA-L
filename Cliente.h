@@ -1,39 +1,27 @@
 #pragma once
-#include <iostream>
 #include <string>
-#include <vector>
-#include <algorithm>
-
 using namespace std;
-struct Cliente
-{
-protected:
-	vector<char> nombre;
-	vector<char> ID;
-	string historialCompras;
+
+class Cliente {
+private:
+    string nombre;
+    string direccion;
+    string telefono;
 
 public:
-	Cliente(string hc);
+    Cliente();
+    Cliente(const string& nombre, const string& direccion, const string& telefono);
 
-	Cliente(const Cliente& otro);
+    // Getters
+    string getNombre() const;
+    string getDireccion() const;
+    string getTelefono() const;
 
-	string getNombre() const;
-	string getID() const;
-	string getHistorialCompras() const;
+    // Setters
+    void setNombre(const string& nombre);
+    void setDireccion(const string& direccion);
+    void setTelefono(const string& telefono);
 
-	void setNombre();
-	void setNombre(const string& n);
-	void setID();
-	void setID(const string& id);
-	void setHistorialCompras(const string& hc);
-
-	// Métodos de utilidad
-	void mostrarInformacion() const;
-	void agregarCompra(const string& nombreVideojuego);
-	bool tieneCompras() const;
-
-	// Operador de asignación
-	Cliente& operator=(const Cliente& otro);
-
+    void mostrarInfo() const;
 };
 
